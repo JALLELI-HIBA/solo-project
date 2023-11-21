@@ -12,7 +12,7 @@ images[4] = "img/gallery5.jpeg";
 images[5] = "img/gallery6.jpeg";
  
 
-// Change Image
+/*change image function */
 function changeImg(){
 	document.slide.src = images[i];
 
@@ -61,7 +61,11 @@ function searchMenu() {
 /* search bar code ends */
 
 
-/* rating  */
+
+
+
+
+/* rating start */
 
 var star = document.querySelectorAll('input');
 var showValue = document.querySelector('#rating-value');
@@ -73,9 +77,13 @@ for (let i = 0; i < star.length; i++) {
 		showValue.innerHTML = i + " out of 5";
 	});
 }
+/* rating ends */ 
 
 
-// Add an event listener to the button using jQuery
+
+
+
+/* Add an event listener to the button using jQuery*/
 $(document).ready(function() {
     
     $('.btn-third').on('click', function(event) {
