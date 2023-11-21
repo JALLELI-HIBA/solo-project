@@ -18,7 +18,6 @@ function changeImg(){
 
 	// Check If Index Is Under Max
 	if(i < images.length - 1){
-	  // Add 1 to Index
 	  i++; 
 	} else { 
 		// Reset Back To O
@@ -32,3 +31,57 @@ function changeImg(){
 // Run function when page loads
 window.onload=changeImg;
 /* gallery section ends  */ 
+
+
+
+
+
+/* search bar code begin */
+function searchMenu() {
+    // Get the search input value
+    var searchTerm = document.getElementById("menu-search").value.toLowerCase();
+
+    // Get all menu items
+    var menuItems = document.querySelectorAll(".menu-item");
+
+    menuItems.forEach(function (menuItem) {
+        var dishName = menuItem.querySelector("h3").innerText.toLowerCase();
+
+        // Check if the dish name contains the search term
+        if (dishName.includes(searchTerm)) {
+            // If yes, show the menu item
+            menuItem.style.display = "flex";
+        } else {
+            // If not, hide the menu item
+            menuItem.style.display = "none";
+        }
+    });
+}
+
+/* search bar code ends */
+
+
+/* rating  */
+
+var star = document.querySelectorAll('input');
+var showValue = document.querySelector('#rating-value');
+
+for (let i = 0; i < star.length; i++) {
+	star[i].addEventListener('click', function() {
+		i = this.value;
+
+		showValue.innerHTML = i + " out of 5";
+	});
+}
+
+
+// Add an event listener to the button using jQuery
+$(document).ready(function() {
+    
+    $('.btn-third').on('click', function(event) {
+        
+        event.preventDefault();
+
+        alert("your request has been sent successfully.");
+    });
+});
